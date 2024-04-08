@@ -1,0 +1,93 @@
+@import "./additional.scss"; 
+@include reset(); 
+
+// Include breakpoints badge
+// body { @include screen-media(); }
+
+@include font-face("Inter-ExtraLight", "IN", 100);
+@include font-face("Inter-ExtraBold", "IN", 800);
+@include font-face("Inter-SemiBold", "IN", 600);
+@include font-face("Inter-Regular", "IN", 400);
+@include font-face("Inter-Medium", "IN", 500);
+@include font-face("Inter-Light", "IN", 300);
+@include font-face("Inter-Black", "IN", 900);
+@include font-face("Inter-Bold", "IN", 700);
+@include font-face("Inter-Thin", "IN", 200);
+
+// @import "swiper/swiper";
+
+:root {
+	--size: #{$basesize}px;
+	--container: 1170px;
+	--gap: 24px;
+	
+	@include media('<=xs') {
+		--gap: 16px;
+	}
+}
+
+body, html {
+	box-sizing: border-box;
+	font-family: "IN", sans-serif;
+	font-size: var(--size);
+	line-height: 1.2;
+	font-weight: 400;
+	color: #2B2B2B;
+}
+
+body[data-scroll-lock-locked] #root {
+	position: relative;
+
+	&::before {
+		display: block;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 100vw;
+		background-color: rgba(0, 0, 0, 0.4);
+		z-index: 9;
+	}
+}
+
+#root {
+	box-sizing: border-box;
+	min-height: 100vh;
+	display: flex;
+	flex-flow: column nowrap;
+	background: radial-gradient(ellipse at left top, #D3EBFE, rgba(211, 235, 254, 0) 50%), radial-gradient(ellipse at right 80%, #FFE9D0, rgba(253, 241, 228, 0) 50%), #fff;
+	padding-top: 40px;
+	
+	@include media('<=xxs') {
+		padding-top: 16px;
+	}
+}
+
+.container {
+	$self: &;
+	margin-left: auto;
+	margin-right: auto;
+	box-sizing: border-box;
+	max-width: var(--container);
+	width: calc(100% - var(--gap) * 2);
+	
+	&_right, &_left {
+		width: calc(100% - var(--gap));
+		max-width: calc(100% - (100% - var(--container)) / 2);
+	}
+	
+	&_right {
+		margin-right: unset;
+	}
+	
+	&_left {
+		margin-left: unset;
+	}
+	
+	&__half {
+		flex-shrink: 0;
+		max-width: calc(50% - var(--gap) / 2);
+		width: calc(var(--container) / 2 );
+	}
+}

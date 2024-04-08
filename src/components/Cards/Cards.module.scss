@@ -1,0 +1,125 @@
+@import '../../assets/scss/additional.scss';
+
+.cards {
+	margin-bottom: 60px;
+	
+	@include media('<=xs') {
+		margin-bottom: 80px;
+	}
+
+	&__item {
+		box-sizing: border-box;
+		margin-bottom: 20px;
+		border-radius: 20px;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+		background-color: rgba(255, 255, 255, 0.4);
+		padding: 40px 40px 30px;
+		display: grid;
+		grid-template-columns: 62px 1fr;
+		grid-gap: 20px 40px;
+		
+		@include media('<=sm') {
+			padding: 30px;
+		}
+		
+		@include media('<=xs') {
+			grid-template-columns: 50px 1fr;
+			grid-gap: 20px;
+			padding: 20px;
+		}
+		
+		@include media('<=xxs') {
+			margin-bottom: 10px;
+			grid-template-columns: 34px 1fr;
+		}
+	}
+
+	&__icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		height: 63px;
+		width: 63px;
+		background-color: #F1D6D6;
+		border-radius: 50%;
+		grid-column: span 1;
+		grid-row: span 2;
+		
+		@include media('<=xs') {
+			grid-row: span 1;
+			height: 48px;
+			width: 48px;
+		}
+		
+		@include media('<=xxs') {
+			height: 32px;
+			width: 32px;
+		}
+	
+		img {
+			
+			@include media('<=xs') {
+				max-width: 24px;
+			}
+			
+			@include media('<=xxs') {
+				max-width: 16px;
+			}
+		}
+	}
+
+	&__subtitle {
+		grid-column: span 1;
+		font-weight: 600;
+		font-size: 32px;
+		@include range(32px, 16px, 960px, 480px);
+		
+		span {
+			font-weight: 700;
+			color: #F04C31;
+		}
+	}
+
+	&__links {
+		grid-column: 2 / span 1;
+		display: flex;
+		flex-wrap: wrap;
+		font-size: 16px;
+		@include range(16px, 10px, 960px, 480px);
+		
+		@include media('<=xs') {
+			grid-column: 1 / span 2;
+		}
+
+		p {
+			box-sizing: border-box;
+			padding: 10px 0;
+			
+			@include media('<=xs') {
+				padding: 0;
+			}
+		}
+	}
+
+	&__link {
+		margin: 0 12px 10px 0;
+		text-decoration: none;
+		font-weight: 700;
+		line-height: 1;
+		color: #2B2B2B;
+		border-radius: 100px;
+		padding: 10px 20px;
+		border: 1px solid #E9E9E9;
+		
+		@include media('<=xs') {
+			padding: 8px 16px;
+		}
+
+		&_filled {
+			background-color: #1C2127;
+			border-color: #1C2127;
+			color: #fff;
+		}
+	}
+}

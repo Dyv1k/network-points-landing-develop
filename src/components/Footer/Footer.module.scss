@@ -1,0 +1,129 @@
+@import '../../assets/scss/additional.scss';
+
+.footer {
+	margin-top: auto;
+	background-color: #fff;
+	border-radius: 40px 40px 0 0;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.03);
+
+	&__top {
+		min-height: 250px;
+		padding: 40px 0;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		
+		@include media('<=xxs') {
+			min-height: 165px;
+		}
+	}
+
+	&__note {
+		text-align: center;
+		font-weight: 600;
+
+		br {
+			display: none;
+			
+			@include media('<=xxs') {
+				display: block;
+			}
+		}
+
+		span {
+			display: block;
+
+			&:nth-child(1) {
+				font-size: 24px;
+				color: #2B2B2B;
+				margin-bottom: 20px;
+
+				@include media('<=xs') {
+					font-size: 20px;
+				}
+
+				@include media('<=xxs') {
+					font-size: 14px;
+				}
+			}
+			
+			&:nth-child(2) {
+				text-transform: uppercase;
+				color: #F04C31;
+				font-size: 32px;
+				
+				@include media('<=xs') {
+					font-size: 26px;
+				}
+				
+				@include media('<=xxs') {
+					font-size: 20px;
+				}
+			}
+		}
+	}
+	
+	&__bottom {
+		border-top: 1px solid #E9E9E9;
+	}
+	
+	&__inner {
+		display: flex;
+		box-sizing: border-box;
+		min-height: 120px;
+		align-items: center;
+		justify-content: space-between;
+		padding: 20px 0;
+		max-width: 1270px !important;
+		
+		@include media('<=xs') {
+			min-height: 92px;
+		}
+		
+		@include media('<=xxs') {
+			flex-flow: column nowrap;
+		}
+	}
+
+	&__logo {
+		display: inline-flex;
+		align-items: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 20px;
+		line-height: 1;
+		color: #2B2B2B;
+		
+		@include media('<=xs') {
+			font-size: 16px;
+		}
+		
+		@include media('<=xxs') {
+			font-size: 10px;
+		}
+	
+		img {
+			max-width: 46px;
+			
+			@include media('<=xxs') {
+				max-width: 20px;
+			}
+		}
+
+		span {
+			font-weight: 800;
+		}
+	}
+
+	&__copy {
+		font-weight: 500;
+		
+		@include media('<=xs') {
+			font-size: 14px;
+		}
+		
+		@include media('<=xxs') {
+			font-size: 10px;
+		}
+	}
+}
